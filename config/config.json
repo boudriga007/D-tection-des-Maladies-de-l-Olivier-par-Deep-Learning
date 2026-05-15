@@ -1,0 +1,81 @@
+{
+  "project_name": "Détection des Maladies de l Olivier",
+  "encadrant": "M. Abdallah Khemais",
+  "notebook": "1/6 — Setup & Exploration",
+  "dataset_path": "/kaggle/input/datasets/hikmetdurmaz/zeytin-yaprak-224-aug/Zeytin_224x224_Augmented/val",
+  "classes": [
+    "Kus_Gozu_Mantari",
+    "Pas_Akari",
+    "Saglikli"
+  ],
+  "num_classes": 3,
+  "class_counts": {
+    "Kus_Gozu_Mantari": 460,
+    "Pas_Akari": 290,
+    "Saglikli": 230
+  },
+  "total_images": 980,
+  "img_size": 224,
+  "channels": 3,
+  "batch_size": 32,
+  "epochs": 30,
+  "learning_rate": 0.0001,
+  "model_name": "EfficientNetB4",
+  "train_split": 0.7,
+  "val_split": 0.15,
+  "test_split": 0.15,
+  "output_dir": "/kaggle/working/",
+  "model_save_path": "/kaggle/working/olive_efficientnetb4_best.h5",
+  "tflite_path": "/kaggle/working/olive_model.tflite",
+  "class_to_idx": {
+    "Kus_Gozu_Mantari": 0,
+    "Pas_Akari": 1,
+    "Saglikli": 2
+  },
+  "idx_to_class": {
+    "0": "Kus_Gozu_Mantari",
+    "1": "Pas_Akari",
+    "2": "Saglikli"
+  },
+  "n_train": 686,
+  "n_val": 147,
+  "n_test": 147,
+  "augmentation": {
+    "rotation_range": 30,
+    "horizontal_flip": true,
+    "zoom_range": 0.15,
+    "brightness_range": [
+      0.7,
+      1.3
+    ],
+    "shear_range": 10,
+    "width_shift": 0.1,
+    "height_shift": 0.1
+  },
+  "notebook_2_done": true,
+  "results": {
+    "ResNet50": {
+      "test_accuracy": 0.5714,
+      "test_loss": 0.9634,
+      "total_params": 24705411,
+      "model_path": "/kaggle/working/resnet50_best.h5"
+    },
+    "VGG16": {
+      "test_accuracy": 0.9184,
+      "test_loss": 0.2228,
+      "total_params": 15045443,
+      "model_path": "/kaggle/working/vgg16_best.h5"
+    },
+    "EfficientNetB4": {
+      "test_accuracy": 0.9048,
+      "test_loss": 0.2613,
+      "total_params": 18660450,
+      "epochs_p1": 10,
+      "epochs_p2": 9,
+      "best_val_acc": 0.9252,
+      "model_path": "/kaggle/working/olive_efficientnetb4_best.keras",
+      "tflite_path": "/kaggle/working/olive_model.tflite"
+    }
+  },
+  "final_model": "EfficientNetB4"
+}
